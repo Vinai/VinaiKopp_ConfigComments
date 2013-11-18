@@ -1,8 +1,7 @@
 
+//delete console.log;
 var commentsApp = angular.module('comments', ['ngAnimate']);
 commentsApp.value('initData', {});
-
-delete console.log;
 
 commentsApp
     .directive('vkInitComments', function(initData) {
