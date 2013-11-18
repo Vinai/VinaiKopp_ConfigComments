@@ -17,6 +17,8 @@ To add a comment, enter it in the input field and click "Add".
 To edit a comment, click on the one you want to update. To save the changes simply click anywhere outside the field.  
 To delete a comment, click the little x on the right beside each comment.
 
+A little [screencast](http://quick.as/6r7asxmx) is available, but since I don't know how to embed quick.as casts right now, here is a screenshot, too:
+
 ![Screenshot of default block template](https://raw.github.com/Vinai/VinaiKopp_ConfigComments/media/ConfigComments-screenshot-popup.png)
 
 Compatibility
