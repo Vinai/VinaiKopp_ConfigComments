@@ -16,7 +16,7 @@ class VinaiKopp_ConfigComments_Helper_Data extends Mage_Core_Helper_Abstract
             $paths[] = $element->getId();
         }
         
-        $this->_mergeComments($comments, $this->loadComments($paths));
+        $this->_mergeComments($comments, $this->_loadComments($paths));
         
         return $comments;
     }
@@ -31,7 +31,7 @@ class VinaiKopp_ConfigComments_Helper_Data extends Mage_Core_Helper_Abstract
         }
     }
     
-    public function loadComments($paths)
+    protected function _loadComments($paths)
     {
         if (! is_array($paths)) {
             $paths = array($paths);
@@ -53,5 +53,33 @@ class VinaiKopp_ConfigComments_Helper_Data extends Mage_Core_Helper_Abstract
         }
         
         return $comments;
+    }
+    
+    public function addCommentsToFields($elements)
+    {
+        foreach ($elements as $element) {
+            if ($element->getType() == 'fieldset') {
+                $this->addCommentsToFields($element->getElements());
+                continue;
+            }
+            $afterElementHtml = $element->getAfterElementHtml();
+
+            if ($element->getTooltip()) {
+                $afterElementHtml .= '</div></div>';
+            }
+
+            // Add comment code
+            $afterElementHtml .= <<<EOT
+<span class="vinaikopp-comments" ng-controller="FieldCtrl" ng-cloak>
+    <span ng-mouseenter="showPopup(\$event, '{$element->getId()}')">
+        [<a href="#">{{getComments('{$element->getId()}').length}}</a>]
+    </span>
+</span>
+EOT;
+            if ($element->getTooltip()) {
+                $afterElementHtml .= '<div><div>';
+            }
+            $element->setAfterElementHtml($afterElementHtml);
+        }
     }
 } 

@@ -27,4 +27,14 @@ class VinaiKopp_ConfigComments_Model_Observer
             $args->getTransport()->setHtml($wrapper->toHtml());
         }
     }
+    
+    public function adminhtmlBlockHtmlBefore(Varien_Event_Observer $args)
+    {
+        /** @var Mage_Core_Block_Abstract $block */
+        $block = $args->getBlock();
+        if ($block instanceof Mage_Adminhtml_Block_System_Config_Edit) {
+            $form = $block->getChild('form')->getForm();
+            Mage::helper('vinaikopp_configcomments')->addCommentsToFields($form->getElements());
+        }
+    }
 } 

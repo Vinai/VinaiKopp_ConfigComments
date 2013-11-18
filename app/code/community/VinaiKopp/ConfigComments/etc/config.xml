@@ -6,16 +6,6 @@
         </VinaiKopp_ConfigComments>
     </modules>
     <global>
-        <blocks>
-            <vinaikopp_configcomments>
-                <class>VinaiKopp_ConfigComments_Block</class>
-            </vinaikopp_configcomments>
-            <adminhtml>
-                <rewrite>
-                    <system_config_form_field>VinaiKopp_ConfigComments_Block_Adminhtml_System_Config_Form_Field</system_config_form_field>
-                </rewrite>
-            </adminhtml>
-        </blocks>
         <helpers>
             <vinaikopp_configcomments>
                 <class>VinaiKopp_ConfigComments_Helper</class>
@@ -60,6 +50,14 @@
                     </vinaikopp_configcomments>
                 </observers>
             </core_block_abstract_to_html_after>
+            <adminhtml_block_html_before>
+                <observers>
+                    <vinaikopp_configcomments>
+                        <class>vinaikopp_configcomments/observer</class>
+                        <method>adminhtmlBlockHtmlBefore</method>
+                    </vinaikopp_configcomments>
+                </observers>
+            </adminhtml_block_html_before>
         </events>
     </adminhtml>
     <admin>

@@ -88,6 +88,7 @@ commentsApp
             persist: function() {
                 var path = this.currentPath;
                 if (this.comments[path]) {
+                    this.resetUpdateStatus();
                     $http({
                             url: initData.updateUrl,
                             method: 'POST',
@@ -132,16 +133,29 @@ commentsApp
                 this.visible = true;
                 
                 // Move to position
-                var t = rel.positionedOffset();
+                var t = this.offset(angular.element(rel));
                 $('vinaikopp-comments-popup').setStyle({
-                    left: (t.left - 50)+'px',
+                    left: (t.left - 80)+'px',
                     top: t.top+'px',
-                    width: rel.getWidth() + 'px'
+                    width: (rel.getWidth()+30) + 'px'
                 });
                 return true;
             },
             hide: function(e) {
                 return this.visible = false;
+            },
+            // http://cvmlrobotics.blogspot.de/2013/03/angularjs-get-element-offset-position.html
+            offset: function (elm) {
+                try { return elm.offset(); } catch (e) {}
+                var rawDom = elm[0];
+                var _x = 0;
+                var _y = 0;
+                var body = document.documentElement || document.body;
+                var scrollX = window.pageXOffset || body.scrollLeft;
+                var scrollY = window.pageYOffset || body.scrollTop;
+                _x = rawDom.getBoundingClientRect().left + scrollX;
+                _y = rawDom.getBoundingClientRect().top + scrollY;
+                return { left: _x, top: _y };
             }
         };
         return factory;
