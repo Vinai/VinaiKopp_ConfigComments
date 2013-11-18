@@ -215,4 +215,7 @@ commentsApp
                 inlineEditEnabled = false;
             }
         }
+        $scope.isTab = function($event) {
+            return $event.keyCode && $event.keyCode == 9; 
+        }
     });

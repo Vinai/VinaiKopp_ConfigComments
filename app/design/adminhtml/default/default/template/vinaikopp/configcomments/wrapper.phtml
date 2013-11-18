@@ -14,7 +14,7 @@
                     <div class="comment-text" ng-hide="isInlineEdit($index)" 
                          ng-click="startEdit($index)" vk-stop-event="click">{{comment.text}}</div>
                     <textarea class="edit-comment" rows="2" ng-model="editComment.text" 
-                              ng-show="isInlineEdit($index)" vk-stop-event="click"></textarea>
+                              ng-show="isInlineEdit($index)" vk-stop-event="click" ng-keydown="isTab($event) && stopEdit()"></textarea>
                     <span class="comment-author">{{comment.author}}</span>
                 </div>
             </div>
