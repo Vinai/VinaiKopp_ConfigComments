@@ -1,7 +1,6 @@
 Configuration Comments
 ======================
 This module adds the possibility to add configuration options to system config fields.  
-Simply hover over the number displayed on the left of every field to see the popup.
 
 Facts
 -----
@@ -12,7 +11,11 @@ Facts
 
 Description
 -----------
-This module adds the possibility to add configuration options to system config fields.
+This module adds the possibility to add configuration options to system config fields.  
+Simply hover over the number displayed on the left of every field to see the popup.  
+To add a comment, enter it in the input field and click "Add".
+To edit a comment, click on the one you want to update. To save the changes simply click anywhere outside the field.  
+To delete a comment, click the little x on the right beside each comment.
 
 ![Screenshot of default block template](https://raw.github.com/Vinai/VinaiKopp_ConfigComments/media/ConfigComments-screenshot-popup.png)
 
