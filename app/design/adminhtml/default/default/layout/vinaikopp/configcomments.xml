@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <adminhtml_system_config_edit>
+        <reference name="head">
+            <action method="addJs"><js>angularjs/1.2.0/angular.min.js</js></action>
+            <action method="addJs"><js>angularjs/1.2.0/angular-animate.min.js</js></action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <js>vinaikopp/configcomments/comment.js</js>
+            </action>
+            <action method="addItem">
+                <type>skin_css</type>
+                <css>vinaikopp/configcomments/comment.css</css>
+            </action>
+        </reference>
+    </adminhtml_system_config_edit>
+</config>

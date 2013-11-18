@@ -1,0 +1,12 @@
+
+app/etc/modules/VinaiKopp_ConfigComments.xml app/etc/modules/VinaiKopp_ConfigComments.xml
+app/code/community/VinaiKopp/ConfigComments app/code/community/VinaiKopp/ConfigComments
+
+app/design/adminhtml/default/default/layout/vinaikopp/configcomments.xml app/design/adminhtml/default/default/layout/vinaikopp/configcomments.xml
+
+app/design/adminhtml/default/default/template/vinaikopp/configcomments app/design/adminhtml/default/default/template/vinaikopp/configcomments
+
+js/angularjs/1.2.0/angular.min.js js/angularjs/1.2.0/angular.min.js
+js/angularjs/1.2.0/angular-animate.min.js js/angularjs/1.2.0/angular-animate.min.js
+
+skin/adminhtml/default/default/vinaikopp/configcomments skin/adminhtml/default/default/vinaikopp/configcomments
