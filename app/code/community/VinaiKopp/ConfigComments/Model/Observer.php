@@ -20,6 +20,9 @@ class VinaiKopp_ConfigComments_Model_Observer
                 'updateUrl' => $updateUrl,
             );
             
+            // Well, ugly, but I don't see to get that class in there without a rewrite.
+            $html = str_replace('<p class="note">', '<p class="note ng-non-bindable">', $html);
+            
             $wrapper = $block->getLayout()->createBlock('core/template')
                 ->setTemplate('vinaikopp/configcomments/wrapper.phtml')
                 ->assign('blockHtml', $html)

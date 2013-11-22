@@ -58,6 +58,8 @@ class VinaiKopp_ConfigComments_Helper_Data extends Mage_Core_Helper_Abstract
     public function addCommentsToFields($elements)
     {
         foreach ($elements as $element) {
+            /** @var Varien_Data_Form_Element_Abstract $element */
+            $element->addClass('ng-non-bindable');
             if ($element->getType() == 'fieldset') {
                 $this->addCommentsToFields($element->getElements());
                 continue;
