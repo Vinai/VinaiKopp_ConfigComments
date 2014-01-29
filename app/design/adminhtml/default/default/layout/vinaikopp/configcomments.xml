@@ -2,8 +2,8 @@
 <config>
     <adminhtml_system_config_edit>
         <reference name="head">
-            <action method="addJs"><js>angularjs/1.2.0/angular.min.js</js></action>
-            <action method="addJs"><js>angularjs/1.2.0/angular-animate.min.js</js></action>
+            <action method="addJs"><js>angularjs/1.2.10/angular.min.js</js></action>
+            <action method="addJs"><js>angularjs/1.2.10/angular-animate.min.js</js></action>
             <action method="addItem">
                 <type>skin_js</type>
                 <js>vinaikopp/configcomments/comment.js</js>

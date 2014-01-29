@@ -6,7 +6,7 @@ app/design/adminhtml/default/default/layout/vinaikopp/configcomments.xml app/des
 
 app/design/adminhtml/default/default/template/vinaikopp/configcomments app/design/adminhtml/default/default/template/vinaikopp/configcomments
 
-js/angularjs/1.2.0/angular.min.js js/angularjs/1.2.0/angular.min.js
-js/angularjs/1.2.0/angular-animate.min.js js/angularjs/1.2.0/angular-animate.min.js
+js/angularjs/1.2.10/angular.min.js js/angularjs/1.2.10/angular.min.js
+js/angularjs/1.2.10/angular-animate.min.js js/angularjs/1.2.10/angular-animate.min.js
 
 skin/adminhtml/default/default/vinaikopp/configcomments skin/adminhtml/default/default/vinaikopp/configcomments

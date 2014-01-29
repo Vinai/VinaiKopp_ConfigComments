@@ -125,6 +125,7 @@ commentsApp
             show: function(e) {
                 // Find the matching config value table cell
                 var rel = $(e.fromElement);
+                if (! rel) rel = e.relatedTarget;
                 if (! rel.match('td.value') && ! (rel = rel.up('td.value')))
                     return;
     
