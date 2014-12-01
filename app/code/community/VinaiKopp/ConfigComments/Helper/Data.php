@@ -24,7 +24,7 @@ class VinaiKopp_ConfigComments_Helper_Data extends Mage_Core_Helper_Abstract
     public function getElementComments($elements)
     {
         $comments = $paths = array();
-        
+
         /** @var Varien_Data_Form_Element_Abstract $element */
         foreach ($elements as $element) {
             if ($element->getType() == 'fieldset') {
@@ -33,12 +33,12 @@ class VinaiKopp_ConfigComments_Helper_Data extends Mage_Core_Helper_Abstract
             }
             $paths[] = $element->getId();
         }
-        
+
         $this->_mergeComments($comments, $this->_loadComments($paths));
-        
+
         return $comments;
     }
-    
+
     protected function _mergeComments(&$commentTarget, $commentSource)
     {
         foreach ($commentSource as $path => $comments) {
@@ -48,7 +48,7 @@ class VinaiKopp_ConfigComments_Helper_Data extends Mage_Core_Helper_Abstract
             $commentTarget[$path] += $comments;
         }
     }
-    
+
     protected function _loadComments($paths)
     {
         if (! is_array($paths)) {
@@ -69,10 +69,10 @@ class VinaiKopp_ConfigComments_Helper_Data extends Mage_Core_Helper_Abstract
                 'author' => $comment->getAuthor()
             );
         }
-        
+
         return $comments;
     }
-    
+
     public function addCommentsToFields($elements)
     {
         foreach ($elements as $element) {
@@ -91,7 +91,7 @@ class VinaiKopp_ConfigComments_Helper_Data extends Mage_Core_Helper_Abstract
             // Add comment code
             $afterElementHtml .= <<<EOT
 <span class="vinaikopp-comments" ng-controller="FieldCtrl" ng-cloak>
-    <span ng-mouseenter="showPopup(\$event, '{$element->getId()}')">
+    <span ng-click="showPopup(\$event, '{$element->getId()}')">
         [<a href="#">{{getComments('{$element->getId()}').length}}</a>]
     </span>
 </span>
@@ -102,4 +102,4 @@ EOT;
             $element->setAfterElementHtml($afterElementHtml);
         }
     }
-} 
+}
