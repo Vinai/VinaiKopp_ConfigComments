@@ -22,7 +22,7 @@
     <vk-init-comments><?php echo $initJson ?></vk-init-comments>
     <?php echo $blockHtml ?>
     <div ng-controller="PopupCtrl">
-        <div id="vinaikopp-comments-popup" 
+        <div id="vinaikopp-comments-popup"
              ng-show="isPopupVisible()" ng-mouseleave="hidePopup()" ng-click="stopEdit()">
             <span class="comment-path"><?php echo $this->__('Config Path: {{getCurrentPath()}}') ?></span>
             <span class="update-success" ng-show="updateStatus.ok"><?php echo $this->__('(Update successful)') ?></span>
@@ -31,15 +31,15 @@
                 <div class="comment" ng-class-even="'even'" ng-class-odd="'odd'">
                     <div class="rm-comment" ng-hide="isInlineEdit($index)"
                          ng-click="remove($index)" vk-stop-event="click">&times;</div>
-                    <div class="comment-text" ng-hide="isInlineEdit($index)" 
+                    <div class="comment-text" ng-hide="isInlineEdit($index)"
                          ng-click="startEdit($index)" vk-stop-event="click">{{comment.text}}</div>
-                    <textarea class="edit-comment" rows="2" ng-model="editComment.text" 
+                    <textarea class="edit-comment" rows="2" ng-model="editComment.text"
                               ng-show="isInlineEdit($index)" vk-stop-event="click" ng-keydown="isTab($event) && stopEdit()"></textarea>
                     <span class="comment-author">{{comment.author}}</span>
                 </div>
             </div>
             <span class="add-new-comment">
-                <textarea class="new-comment" name="new-comment" rows="2" 
+                <textarea class="new-comment" name="new-comment" rows="2"
                           ng-model="newComment.text" autofocus="autofocus"></textarea>
                 <button ng-click="addNew()"><?php echo $this->__('Add') ?></button>
                 <span class="new-comment-author">{{getCurrentAuthor()}}</span>

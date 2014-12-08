@@ -42,7 +42,7 @@ commentsApp
                 var empty = idxProvided ? {} : [];
                 if (! this.comments[path]) return empty;
                 else if (! idxProvided) return this.comments[path];
-                
+
                 if (! this.comments[path][idx]) return empty;
                 else return this.comments[path][idx];
             },
@@ -61,7 +61,7 @@ commentsApp
                 var path = this.currentPath;
                 if (this.newComment.text.length > 0 && path.length > 0) {
                     if (! this.comments[path]) this.comments[path] = [];
-                    
+
                     this.newComment.author = initData.author;
                     this.comments[path].push(angular.copy(this.newComment));
                     this.newComment.text = '';
@@ -75,7 +75,7 @@ commentsApp
                     this.comments[path][idx] = angular.copy(this.editComment);
                     this.persist();
                 }
-                this.editComment.text = '';  
+                this.editComment.text = '';
             },
             remove: function(idx) {
                 var path = this.currentPath;
@@ -101,7 +101,7 @@ commentsApp
                             this.updateStatus.fail = data.fail && data.fail.length;
                             this.updateStatus.error = data.error ? data.error : false;
                             $timeout(this.resetUpdateStatus.bind(this), 3000);
-                            
+
                         }.bind(this))
                         .error(function(data, status, headers, config) {
                             console.log('Update error!');
@@ -124,14 +124,14 @@ commentsApp
             visible: false,
             show: function(e) {
                 // Find the matching config value table cell
-                var rel = $(e.fromElement);
+                var rel = $(e.target);
                 if (! rel) rel = e.relatedTarget;
                 if (! rel.match('td.value') && ! (rel = rel.up('td.value')))
                     return;
-    
+
                 // Set visibility flag
                 this.visible = true;
-                
+
                 // Move to position
                 var t = this.offset(angular.element(rel));
                 $('vinaikopp-comments-popup').setStyle({
@@ -163,24 +163,24 @@ commentsApp
     .controller('FieldCtrl', function($scope, Comments, Popup) {
         var commentService = Comments;
         var popupService = Popup;
-        
+
         $scope.getComments = function(path) {
             return commentService.getComments(path);
         };
         $scope.showPopup = function($event, path) {
             commentService.setPath(path);
             popupService.show($event);
-        }
+        };
     })
     .controller('PopupCtrl', function ($scope, Comments, Popup, initData) {
         var commentService = Comments;
         var popupService = Popup;
         var inlineEditEnabled = false;
-        
+
         $scope.newComment = commentService.newComment;
         $scope.editComment = commentService.editComment;
         $scope.updateStatus = commentService.updateStatus
-        
+
         $scope.getCurrentComments = function() {
             return commentService.getCurrent();
         };
@@ -216,6 +216,6 @@ commentsApp
             }
         }
         $scope.isTab = function($event) {
-            return $event.keyCode && $event.keyCode == 9; 
+            return $event.keyCode && $event.keyCode == 9;
         }
     });
