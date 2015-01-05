@@ -1,0 +1,14 @@
+{
+    "name": "aoepeople/vinaikopp_configcomments",
+    "license": "GPL-3.0",
+    "type": "magento-module",
+    "description": "This Magento extensions allows adding comments to system config fields.",
+    "homepage": "https://github.com/Vinai/VinaiKopp_ConfigComments",
+    "authors":[
+        {
+            "name":"Vinai Kopp",
+            "email":"contact@vinaikopp.com"
+        }
+    ]
+}
+
