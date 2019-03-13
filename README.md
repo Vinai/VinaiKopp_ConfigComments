@@ -1,3 +1,7 @@
+# This Magento 1 extension is orphaned, unsupported and no longer maintained.
+
+If you use it, you are effectively adopting the code for your own project.
+
 Configuration Comments
 ======================
 This module adds the possibility to add comments to system config fields.  
